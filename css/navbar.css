@@ -16,9 +16,7 @@ body {
     left: 0;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-
-    /* Added padding to user profile */
+    align-items: center;
     padding-top: 80px;
 }
 
@@ -27,8 +25,7 @@ body {
 }
 
 .user-profile {
-    text-align: center;;
-    /* Adds spacing below the user profile */
+    text-align: center;
     padding-bottom: 100px;
 }
 
@@ -57,96 +54,99 @@ body {
     display: block;
 }
 
-.nav-links {
-    list-style: none;
-    padding: 0;
-    /* Centers nav-links vertically */
-    margin: auto 0;
-    width: 100%;
-}
-
-.nav-links li {
-    width:100%;
-}
-
-.nav-links a {
+.nav-buttons {
     display: flex;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
-    justify-content: center; /* Center align icons */
-    width: 55%;
-    padding: 30px;
-    color: white;
-    text-decoration: none;
 }
 
-.nav-links a span {
-    display: none; /* Hides text when sidebar is retracted */
-}
-
-.sidebar.expanded .nav-links a {
-    justify-content: flex-start; /* Align text when expanded */
-    padding: 30px;
-    width: 100%;
-}
-
-.sidebar.expanded .nav-links a span {
-    display: inline; /* Shows text when sidebar is expanded */
-}
-
-.nav-links a:hover {
-    background-color: #edae49;
-}
-
-.nav-links i {
-    font-size: 20px;
-    width: 30px; /* Ensures consistent width for icon alignment */
-    text-align: center;
-}
-
-.sidebar.expanded .nav-links i {
-    margin-right: 10px;
-}
-
-.logout-section {
-    position: absolute;
-    /* Pushed logout button further down */
-    top:800px;
-    width: 110%;
-    text-align: center;
-}
-
-.logout-button {
+.nav-buttons button {
     display: flex;
-    justify-content: center; /* Center align icon */
-    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 20px;
     background: none;
     border: none;
     color: white;
     font-size: 16px;
     cursor: pointer;
     text-decoration: none;
+    transition: background 0.3s;
 }
 
-.sidebar.expanded .logout-button {
-    justify-content: flex-start; /* Align text when expanded */
-    padding: 30px;
-}
-
-.logout-button i {
+.nav-buttons button i {
     font-size: 20px;
-    width: 30px; /* Ensures consistent width for alignment */
+    width: 30px;
     text-align: center;
+    margin-right: 10px;
 }
 
-.logout-button span {
+.nav-buttons button span {
     display: none; /* Hides text when sidebar is retracted */
+    white-space: nowrap; /* Prevents text shifting */
 }
 
-.sidebar.expanded .logout-button span {
-    padding-left: 10px;
+.sidebar.expanded .nav-buttons button {
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.sidebar.expanded .nav-buttons button span {
     display: inline; /* Shows text when sidebar is expanded */
 }
 
-.logout-button:hover {
+.nav-buttons button:hover {
+    background-color: #edae49;
+}
+
+.logout-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures consistent vertical alignment */
+    width: 100%;
+}
+
+.nav-buttons button, .logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar.expanded .nav-buttons button, .sidebar.expanded .logout-button {
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.nav-buttons button i, .logout-button i {
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.nav-buttons button span, .logout-button span {
+    display: none; /* Hides text when sidebar is retracted */
+    white-space: nowrap; /* Prevents text shifting */
+}
+
+.sidebar.expanded .nav-buttons button span, .sidebar.expanded .logout-button span {
+    display: inline; /* Shows text when sidebar is expanded */
+}
+
+.nav-buttons button:hover, .logout-button:hover {
     background-color: #edae49;
 }
