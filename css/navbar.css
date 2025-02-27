@@ -17,7 +17,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding-top: 20px;
+
+    padding-top: 80px; /* Added padding to user profile */
   }
   
   .sidebar.expanded {
@@ -26,6 +27,7 @@ body {
   
   .user-profile {
     text-align: center;
+    padding-bottom: 100px; /* Adds spacing below the user profile */
   }
   
   .profile-icon {
@@ -49,7 +51,7 @@ body {
   .nav-links {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: auto 0; /* Centers nav-links vertically */
     width: 100%;
   }
   
@@ -62,7 +64,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    padding: 15px;
+    padding: 30px;
     color: white;
     text-decoration: none;
   }
@@ -82,7 +84,7 @@ body {
   
   .logout-section {
     position: absolute;
-    bottom: 20px;
+    top: 850px; /* Pushed logout button further down */
     width: 100%;
     text-align: center;
   }
