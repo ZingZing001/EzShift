@@ -3,53 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Frame</title>
+  <title>EzShift</title>
   <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/navbar.css">
 </head>
 <body>
-  <header class="header">
-    <!-- Leave header empty as per your instructions -->
+  <header class="sidebar">
+    <div class="user-profile">
+      <img src="./assets/images/user-icon.png" alt="User Profile" class="profile-icon">
+      <p class="user-name">Username</p>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html"><img src="./assets/icons/home.png" alt="Home Icon"></a> Overview </li>
+        <li><a href="shifts.html"><img src="./assets/icons/shifts.png" alt="Shifts Icon"></a> Schedule </li>
+        <li><a href="payroll.html"><img src="./assets/icons/payroll.png" alt="Payroll Icon"></a> Payroll </li>
+        <li><a href="settings.html"><img src="./assets/icons/settings.png" alt="Settings Icon"></a> Settings </li>
+      </ul>
+    </nav>
   </header>
 
-  <aside class="sidebar">
-    <!-- Sidebar Icon -->
-
-     <!-- no logo for now
-    <div class="sidebar-icon">
-      <img src="./assets/images/logo.jpg" alt="Logo">
-    </div>
-    -->
-
-    <!-- Sidebar Buttons -->
-    <nav class="sidebar-nav">
-      <button class="sidebar-btn">
-        <img src="https://www.kindpng.com/picc/m/459-4595417_category-overview-icon-hd-png-download.png" class = "sidebar-icon">
-        Overview
-      </button>
-      <button class="sidebar-btn">
-        <img src="https://www.kindpng.com/picc/m/459-4595417_category-overview-icon-hd-png-download.png" class = "sidebar-icon">
-        Schedule
-      </button>
-      <button class="sidebar-btn">
-        <img src="https://www.kindpng.com/picc/m/459-4595417_category-overview-icon-hd-png-download.png" class = "sidebar-icon">
-        Payroll
-      </button>
-    </nav>
-    <!-- Logout Button -->
-    <div class="logout-section">
-      <button class="sidebar-btn logout-btn">
-        <img src="./assets/images/log-out-icon.png" class = "sidebar-icon">
-        Logout
-      </button>
-    </div>
-  </aside>
-
-  <main class="main-content">
-    <!-- Content of the main page -->
-    <h1>Welcome to the Website</h1>
-    <p>This is your main content area.</p>
-  </main>
-
-  <script src="./script.js"></script>
+  <script src="./js/navbar.js"></script>
 </body>
 </html>
