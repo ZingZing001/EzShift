@@ -16,7 +16,7 @@ body {
     left: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     padding-top: 20px;
   }
   
@@ -54,57 +54,58 @@ body {
   }
   
   .nav-links li {
-    text-align: center;
-    padding: 15px 0;
+    width: 100%;
   }
   
   .nav-links a {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 15px;
     color: white;
     text-decoration: none;
-    padding: 10px;
-  }
-  
-  .nav-links img {
-    width: 30px;
-    height: 30px;
   }
   
   .nav-links a:hover {
     background-color: #edae49;
   }
   
-  .sidebar.expanded .nav-links a {
-    justify-content: flex-start;
-    padding-left: 20px;
+  .nav-links i {
+    margin-left: 10px;
+    margin-right: 10px;
   }
   
-  .sidebar.expanded .nav-links img {
+  .sidebar.expanded .nav-links i {
     margin-right: 10px;
   }
   
   .logout-section {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
     text-align: center;
-    padding: 15px 0;
   }
   
   .logout-button {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
+    padding: 15px;
     background: none;
     border: none;
     color: white;
     font-size: 16px;
     cursor: pointer;
-    padding: 10px;
     text-decoration: none;
+  }
+  
+  .logout-button i {
+    margin-left: 10px;
+    margin-right: 10px;
   }
   
   .logout-button:hover {
     background-color: #edae49;
   }
-  
