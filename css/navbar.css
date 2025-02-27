@@ -1,0 +1,156 @@
+body {
+    background-color: #efefef;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    background-color: #1f172d;
+    color: white;
+    width: 100px;
+    height: 100vh;
+    transition: width 0.3s;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.sidebar.expanded {
+    width: 200px;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.profile-icon {
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar.expanded .profile-icon {
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+
+.user-name {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.sidebar.expanded .user-name {
+    opacity: 1;
+}
+
+
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-buttons button {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-buttons button i {
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.nav-buttons button span {
+    display: none; /* Hides text when sidebar is retracted */
+    white-space: nowrap; /* Prevents text shifting */
+}
+
+.sidebar.expanded .nav-buttons button {
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.sidebar.expanded .nav-buttons button span {
+    display: inline; /* Shows text when sidebar is expanded */
+}
+
+.nav-buttons button:hover {
+    background-color: #edae49;
+}
+
+.logout-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures consistent vertical alignment */
+    width: 100%;
+}
+
+.nav-buttons button, .logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar.expanded .nav-buttons button, .sidebar.expanded .logout-button {
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.nav-buttons button i, .logout-button i {
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.nav-buttons button span, .logout-button span {
+    display: none; /* Hides text when sidebar is retracted */
+    white-space: nowrap; /* Prevents text shifting */
+}
+
+.sidebar.expanded .nav-buttons button span, .sidebar.expanded .logout-button span {
+    display: inline; /* Shows text when sidebar is expanded */
+}
+
+.nav-buttons button:hover, .logout-button:hover {
+    background-color: #edae49;
+}
