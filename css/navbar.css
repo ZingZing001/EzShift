@@ -53,6 +53,7 @@ body {
 
 .user-name {
     opacity: 0;
+    transition: opacity 0.2s;
 }
 
 .sidebar.expanded .user-name {
