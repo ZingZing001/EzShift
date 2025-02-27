@@ -2,9 +2,9 @@ body {
     background-color: #efefef;
     margin: 0;
     font-family: Arial, sans-serif;
-  }
-  
-  .sidebar {
+}
+
+.sidebar {
     background-color: #1f172d;
     color: white;
     width: 60px;
@@ -18,48 +18,51 @@ body {
     flex-direction: column;
     align-items: stretch;
 
-    padding-top: 80px; /* Added padding to user profile */
-  }
-  
-  .sidebar.expanded {
+    /* Added padding to user profile */
+    padding-top: 80px;
+}
+
+.sidebar.expanded {
     width: 200px;
-  }
-  
-  .user-profile {
+}
+
+.user-profile {
     text-align: center;
-    padding-bottom: 100px; /* Adds spacing below the user profile */
-  }
-  
-  .profile-icon {
+    /* Adds spacing below the user profile */
+    padding-bottom: 100px;
+}
+
+.profile-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-bottom: 10px;
-  }
-  
-  .user-name {
+}
+
+.user-name {
     color: white;
     margin-top: 5px;
     font-size: 14px;
     display: none;
-  }
-  
-  .sidebar.expanded .user-name {
+}
+
+.sidebar.expanded .user-name {
     display: block;
-  }
-  
-  .nav-links {
+}
+
+.nav-links {
     list-style: none;
     padding: 0;
-    margin: auto 0; /* Centers nav-links vertically */
+    /* Centers nav-links vertically */
+    margin: auto 0;
     width: 100%;
-  }
-  
-  .nav-links li {
+}
+
+.nav-links li {
     width: 100%;
-  }
-  
-  .nav-links a {
+}
+
+.nav-links a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -67,29 +70,38 @@ body {
     padding: 30px;
     color: white;
     text-decoration: none;
-  }
-  
-  .nav-links a:hover {
+}
+
+.nav-links a span {
+    display: none; /* Hides text when sidebar is retracted */
+}
+
+.sidebar.expanded .nav-links a span {
+    display: inline; /* Shows text when sidebar is expanded */
+}
+
+.nav-links a:hover {
     background-color: #edae49;
-  }
-  
-  .nav-links i {
+}
+
+.nav-links i {
     margin-left: 10px;
     margin-right: 10px;
-  }
-  
-  .sidebar.expanded .nav-links i {
+}
+
+.sidebar.expanded .nav-links i {
     margin-right: 10px;
-  }
-  
-  .logout-section {
+}
+
+.logout-section {
     position: absolute;
-    top: 850px; /* Pushed logout button further down */
+    /* Pushed logout button further down */
+    top: 850px;
     width: 100%;
     text-align: center;
-  }
-  
-  .logout-button {
+}
+
+.logout-button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -101,13 +113,21 @@ body {
     font-size: 16px;
     cursor: pointer;
     text-decoration: none;
-  }
-  
-  .logout-button i {
+}
+
+.logout-button i {
     margin-left: 10px;
     margin-right: 10px;
-  }
-  
-  .logout-button:hover {
+}
+
+.logout-button span {
+    display: none; /* Hides text when sidebar is retracted */
+}
+
+.sidebar.expanded .logout-button span {
+    display: inline; /* Shows text when sidebar is expanded */
+}
+
+.logout-button:hover {
     background-color: #edae49;
-  }
+}
