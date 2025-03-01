@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EzShift</title>
-    <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/navbar.css">
     <script src="https://kit.fontawesome.com/98c4d327f1.js" crossorigin="anonymous"></script>
 </head>
@@ -15,19 +14,20 @@
             <p class="user-name">Username</p>
         </div>
         <nav class="nav-buttons">
-            <button onclick="location.href='index.html'">
+            <button id="homeButton" onclick="location.href='index.html'">
                 <i class="fas fa-home"></i> <span>Home</span>
             </button>
-            <button onclick="location.href='shifts.html'">
+            <button id="shiftsButton" onclick="location.href='shifts.html'">
                 <i class="fas fa-calendar-alt"></i> <span>Shifts</span>
             </button>
-            <button onclick="location.href='payroll.html'">
+            <button id="payrollButton" onclick="location.href='payroll.html'">
                 <i class="fas fa-file-invoice-dollar"></i> <span>Payroll</span>
             </button>
-            <button onclick="location.href='settings.html'">
+            <button id="settingsButton" onclick="location.href='settings.html'">
                 <i class="fas fa-cog"></i> <span>Settings</span>
             </button>
         </nav>
+        
         <div class="logout-section">
             <button class="logout-button" onclick="logout()">
                 <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
