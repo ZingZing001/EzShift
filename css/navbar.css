@@ -124,8 +124,8 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 80px; /* Ensures logout button is always visible */
-    padding-top: 300px;
+    min-height: 100px; /* Ensures logout button is always visible */
+    padding-top: 250px;
 }
 
 .nav-buttons button, .logout-button {
@@ -177,47 +177,4 @@ body {
 .sidebar.expanded .nav-buttons button span, .sidebar.expanded .logout-button span {
     display: inline;
     opacity: 1;
-}
-
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80px;
-    }
-    .sidebar.expanded {
-        width: 180px;
-    }
-    .nav-buttons button {
-        font-size: 14px;
-        padding: 15px;
-    }
-    .profile-icon {
-        width: 30px;
-        height: 30px;
-    }
-    .sidebar.expanded .profile-icon {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .sidebar {
-        width: 60px;
-    }
-    .sidebar.expanded {
-        width: 160px;
-    }
-    .nav-buttons button {
-        font-size: 12px;
-        padding: 10px;
-    }
-    .profile-icon {
-        width: 25px;
-        height: 25px;
-    }
-    .sidebar.expanded .profile-icon {
-        width: 35px;
-        height: 35px;
-    }
 }
