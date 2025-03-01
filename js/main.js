@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Toggle functionality for week/total view
+  let currentHour = 0;
+  let hoursWorked = 40;
+  let totalHours = 60;
+  // Get the toggle button and add a click event listener
   const toggleButton = document.getElementById("toggle-week");
   if (toggleButton) {
     toggleButton.addEventListener("click", function () {
@@ -30,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const centerX = canvas.width / 2;
   const centerY = canvas.height / 2;
   const outerRadius = 80;
-  const lineWidth = 15;
+  const lineWidth = 17;
   const startAngle = -0.5 * Math.PI;
-  const dummyPercentage = 0.65; // 65% hours worked
+  const dummyPercentage = 0.1; // 65% hours worked
 
   // Define a very small gap between arcs (in radians)
   const gapPercentage = 0.02; // Very small gap (2% of the total angle)
@@ -70,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ctx.save();
   ctx.lineWidth = lineWidth;
   ctx.lineCap = "round"; // Changed to "round" for rounder caps
-  ctx.miterLimit = 5; // Added miterLimit for smoother joints
+  ctx.miterLimit = 1; // Added miterLimit for smoother joints
 
   // Add outer shadow for a 3D effect
   ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
@@ -98,13 +101,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   ctx.strokeStyle = gradient;
   ctx.beginPath();
-  ctx.arc(centerX, centerY, outerRadius, startAngle + totalAvailableAngle * 0.02, greenEndAngle - totalAvailableAngle * 0.02, false);
+  ctx.arc(centerX, centerY, outerRadius, startAngle + totalAvailableAngle * 0.018, greenEndAngle - totalAvailableAngle * 0.01, false);
   ctx.stroke();
 
+  ctx.lineWidth = lineWidth - 10;
   // Draw the grey arc (hours left)
   ctx.strokeStyle = "#ccc";
   ctx.beginPath();
-  ctx.arc(centerX, centerY, outerRadius, greyStartAngle, greyEndAngle - totalAvailableAngle * 0.02, false);
+  ctx.arc(centerX, centerY, outerRadius, greyStartAngle + totalAvailableAngle * 0.015, greyEndAngle - totalAvailableAngle * 0.025, false);
   ctx.stroke();
 
   // Restore context state to remove shadow settings
