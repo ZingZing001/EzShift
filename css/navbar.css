@@ -18,7 +18,6 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 80px;
-    min-height: 100vh;
 }
 
 .sidebar.expanded {
@@ -26,7 +25,6 @@ body {
 }
 
 .user-profile {
-    min-height: 100px; /* Ensures profile section is always visible */
     display: flex;
     flex-direction: column;
     align-items: center;
