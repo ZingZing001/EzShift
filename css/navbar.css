@@ -125,7 +125,7 @@ body {
     align-items: center;
     width: 100%;
     min-height: 100px; /* Ensures logout button is always visible */
-    padding-top: 250px;
+    padding-top: 100px;
 }
 
 .nav-buttons button, .logout-button {
