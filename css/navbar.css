@@ -47,7 +47,6 @@ body {
     height: 50px;
 }
 
-
 .user-name {
     opacity: 0;
     transition: opacity 0.2s;
@@ -57,8 +56,8 @@ body {
     opacity: 1;
 }
 
-
 .nav-buttons {
+    padding-top: 60px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -70,7 +69,7 @@ body {
     position: relative;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     padding: 20px;
     background: none;
     border: none;
@@ -79,6 +78,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: background 0.3s;
+    margin-top: 20px;
 }
 
 .nav-buttons button i {
@@ -89,8 +89,10 @@ body {
 }
 
 .nav-buttons button span {
-    display: none; /* Hides text when sidebar is retracted */
-    white-space: nowrap; /* Prevents text shifting */
+    display: none;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
 .sidebar.expanded .nav-buttons button {
@@ -100,7 +102,8 @@ body {
 }
 
 .sidebar.expanded .nav-buttons button span {
-    display: inline; /* Shows text when sidebar is expanded */
+    display: inline;
+    opacity: 1;
 }
 
 .nav-buttons button:hover {
@@ -110,8 +113,9 @@ body {
 .logout-section {
     display: flex;
     justify-content: center;
-    align-items: center; /* Ensures consistent vertical alignment */
+    align-items: center;
     width: 100%;
+    padding-top: 300px;
 }
 
 .nav-buttons button, .logout-button {
@@ -143,12 +147,15 @@ body {
 }
 
 .nav-buttons button span, .logout-button span {
-    display: none; /* Hides text when sidebar is retracted */
-    white-space: nowrap; /* Prevents text shifting */
+    display: none;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
 .sidebar.expanded .nav-buttons button span, .sidebar.expanded .logout-button span {
-    display: inline; /* Shows text when sidebar is expanded */
+    display: inline;
+    opacity: 1;
 }
 
 .nav-buttons button:hover, .logout-button:hover {
