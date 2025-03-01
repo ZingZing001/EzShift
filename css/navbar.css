@@ -38,11 +38,12 @@ body {
     justify-content: center;
     width: 40px;
     height: 40px;
-    padding-top: 5px;
+    padding-top: 1%;
     transition: transform 0.3s ease-in-out;;
 }
 
 .sidebar.expanded .profile-icon {
+    padding-top: 1%;
     transform: scale(1.2);
 }
 
@@ -60,7 +61,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 50%;
 }
 
 .nav-buttons button {
@@ -77,7 +78,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: background 0.3s, transform 0.2s ease-in-out;
-    margin-top: 20px;
+    margin-top: 10%;
 }
 
 .nav-buttons button.active {
@@ -108,6 +109,7 @@ body {
     justify-content: flex-start;
     width: 100%;
     padding-left: 20px;
+    padding-top: 10%;
 }
 
 .sidebar.expanded .nav-buttons button span {
@@ -124,8 +126,10 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100px; /* Ensures logout button is always visible */
-    padding-top: 100px;
+    padding-top: 100%;
+}
+.sidebar.expanded .logout-section {
+    padding-top: 100%;
 }
 
 .nav-buttons button, .logout-button {
