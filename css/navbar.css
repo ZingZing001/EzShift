@@ -7,7 +7,7 @@ body {
 .sidebar {
     background-color: #1f172d;
     color: white;
-    width: 80px;
+    width: 100px;
     height: 100vh;
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -43,7 +43,6 @@ body {
 }
 
 .sidebar.expanded .profile-icon {
-    padding-top: 5px;
     transform: scale(1.2);
 }
 
@@ -157,8 +156,14 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
-.nav-buttons button:hover, .logout-button:hover {
-    background-color: rgba(230, 158, 43, 0.781);
+.nav-buttons button:hover {
+    background-color: #edae49b6; 
+    width: 100%;
+}
+
+.logout-button:hover{
+    background-color: #fa2e2eb6; 
+    width: 100%;
 }
 
 .nav-buttons button span, .logout-button span {
@@ -171,4 +176,47 @@ body {
 .sidebar.expanded .nav-buttons button span, .sidebar.expanded .logout-button span {
     display: inline;
     opacity: 1;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+    }
+    .sidebar.expanded {
+        width: 180px;
+    }
+    .nav-buttons button {
+        font-size: 14px;
+        padding: 15px;
+    }
+    .profile-icon {
+        width: 30px;
+        height: 30px;
+    }
+    .sidebar.expanded .profile-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 60px;
+    }
+    .sidebar.expanded {
+        width: 160px;
+    }
+    .nav-buttons button {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .profile-icon {
+        width: 25px;
+        height: 25px;
+    }
+    .sidebar.expanded .profile-icon {
+        width: 35px;
+        height: 35px;
+    }
 }
