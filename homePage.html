@@ -63,6 +63,17 @@
         <div class="module-body">
           <div class="progress-bar">
             <div class = 'skill'>
+              <div class = "progress-bar-2">
+                <div class="outer">
+                  <div class="inner">
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                  </defs>
+                  <circle class = "circle-2" cx="80" cy="80" r="70" transform = "rotate(93)" transform-origin = "center" />
+                </svg>
+              </div>
               <div class="outer">
                 <div class="inner">
                   <div id = "number">50%</div>
@@ -71,11 +82,16 @@
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                 <defs>
                    <linearGradient id="GradientColor">
-                      <stop offset="0%" stop-color="#00c390" />
+                      <stop offset="0%" stop-color="#00fcba" />
                       <stop offset="100%" stop-color="#00fcba" />
                    </linearGradient>
+                   <filter id="roundEdges">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="round" />
+                    <feComposite in="SourceGraphic" in2="round" operator="atop" />
+                  </filter>
                 </defs>
-                <circle cx="80" cy="80" r="70" transform = "rotate(-90)" transform-origin = "center" />
+                <circle class = "circle-1" cx="80" cy="80" r="70" transform = "rotate(-90)" transform-origin = "center" />
               </svg>
             </div>
           </div>
