@@ -9,7 +9,7 @@ body {
     color: white;
     width: 100px;
     height: 100vh;
-    transition: width 0.3s;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -31,25 +31,25 @@ body {
     justify-content: center;
     white-space: nowrap;
     overflow: hidden;
-}
+} 
 
 .profile-icon {
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
+    padding-top: 5px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .sidebar.expanded .profile-icon {
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
+    padding-top: 5px;
+    transform: scale(1.2);
 }
 
 .user-name {
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .sidebar.expanded .user-name {
@@ -57,11 +57,11 @@ body {
 }
 
 .nav-buttons {
-    padding-top: 60px;
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
+    padding-top: 60px;
 }
 
 .nav-buttons button {
@@ -77,7 +77,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s ease-in-out;
     margin-top: 20px;
 }
 
@@ -86,13 +86,18 @@ body {
     width: 30px;
     text-align: center;
     margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-buttons button:hover i {
+    transform: scale(1.1);
 }
 
 .nav-buttons button span {
     display: none;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .sidebar.expanded .nav-buttons button {
@@ -130,7 +135,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s ease-in-out;
 }
 
 .sidebar.expanded .nav-buttons button, .sidebar.expanded .logout-button {
@@ -144,20 +149,21 @@ body {
     width: 30px;
     text-align: center;
     margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-buttons button:hover, .logout-button:hover {
+    background-color: #edae49;
 }
 
 .nav-buttons button span, .logout-button span {
     display: none;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .sidebar.expanded .nav-buttons button span, .sidebar.expanded .logout-button span {
     display: inline;
     opacity: 1;
-}
-
-.nav-buttons button:hover, .logout-button:hover {
-    background-color: #edae49;
 }
