@@ -8,7 +8,8 @@
   <meta content="text/html; charset=utf-8" http-equiv="content-type" />
   <title>EzShift</title>
   <link rel="stylesheet" href="./css/navbar.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/progressBar.css">
+  <link rel="stylesheet" href="./css/overview.css">
   <script src="https://kit.fontawesome.com/98c4d327f1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -47,8 +48,26 @@
           <button class="toggle-week" id="toggle-week">this week</button>
           <span class="to-go-text">, __ To go!</span>
         </div>
+
         <div class="module-body">
-          <canvas id="hoursChart" width="200" height="200"></canvas>
+          <div class="progress-bar">
+            <div class = 'skill'>
+              <div class="outer">
+                <div class="inner">
+                  <div id = "number">50%</div>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                   <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#00c390" />
+                      <stop offset="100%" stop-color="#00fcba" />
+                   </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" transform = "rotate(-90)" transform-origin = "center" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -61,6 +80,6 @@
 
   <script src="./js/navbar.js"></script>
   <script src="./js/logout.js"></script>
-  <script src="./js/main.js"></script>
+  <script src="./js/overview.js"></script>
 </body>
 </html>

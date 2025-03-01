@@ -1,10 +1,19 @@
-/* Adjust main content to have a margin on the left */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body  {
+  background-color: #f6faff;
+  height: 100vh;
+}
+
 main {
-  margin-left: 70px;  /* Adjusted to 70px as requested */
+  margin-left: 70px; 
   padding: 20px;
 }
 
-/* Container for the modules arranged side by side */
 .modules-container {
   display: flex;
   flex-direction: row;
@@ -13,18 +22,16 @@ main {
   padding: 20px;
 }
 
-/* Styling for each module block */
 .module {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #f2fdff;
+  border: 1px solid #e2f7ff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   padding: 20px;
-  flex: 1; /* Ensures modules take equal space */
-  min-width: 300px; /* Prevents modules from becoming too narrow */
+  flex: 1;
+  min-width: 300px; 
 }
 
-/* Hours module header styling */
 .hours-module .module-header {
   display: flex;
   align-items: center;
@@ -43,7 +50,8 @@ main {
   cursor: pointer;
 }
 
-/* Center the module body content */
-.module .module-body {
-  text-align: center;
+.module-body {
+  display: flex;
+  justify-content: center;
 }
+

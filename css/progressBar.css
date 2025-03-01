@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body  {
+  background-color: #e3edf7;
+  height: 100vh;
+}
+
+.skill {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.outer {
+  height: 160px;
+  width: 160px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+              -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  box-shadow: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+              inset -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+}
+
+#number {
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  animation: anim 2s linear forwards;
+}
+
+@keyframes anim {
+  100%{
+    stroke-dashoffset: 225;
+  }
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
