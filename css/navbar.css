@@ -7,7 +7,7 @@ body {
 .sidebar {
     background-color: #1f172d;
     color: white;
-    width: 100px;
+    width: 80px;
     height: 100vh;
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -18,6 +18,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 80px;
+    min-height: 100vh;
 }
 
 .sidebar.expanded {
@@ -25,12 +26,11 @@ body {
 }
 
 .user-profile {
+    min-height: 100px; /* Ensures profile section is always visible */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 .profile-icon {
@@ -124,6 +124,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-height: 80px; /* Ensures logout button is always visible */
     padding-top: 300px;
 }
 
