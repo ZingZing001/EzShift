@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <!-- Updated meta tag per browser recommendation -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <title>EzShift</title>
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://kit.fontawesome.com/98c4d327f1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="sidebar">
+    <div class="user-profile">
+      <img src="./assets/icons/user-icon.png" alt="User Profile" class="profile-icon">
+      <p class="user-name">Username</p>
+    </div>
+    <nav class="nav-buttons">
+      <button id="homeButton" onclick="location.href='homePage.html'">
+        <i class="fas fa-home"></i> <span>Home</span>
+      </button>
+      <button id="shiftsButton" onclick="location.href='shifts.html'">
+        <i class="fas fa-calendar-alt"></i> <span>Shifts</span>
+      </button>
+      <button id="payrollButton" onclick="location.href='payroll.html'">
+        <i class="fas fa-file-invoice-dollar"></i> <span>Payroll</span>
+      </button>
+      <button id="settingsButton" onclick="location.href='settings.html'">
+        <i class="fas fa-cog"></i> <span>Settings</span>
+      </button>
+    </nav>
+    <div class="logout-section">
+      <button class="logout-button" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="modules-container">
+      <!-- Hours Worked Module -->
+      <div class="module hours-module">
+        <div class="module-header">
+          <span class="hours-text">You have worked __ hours </span>
+          <button class="toggle-week" id="toggle-week">this week</button>
+          <span class="to-go-text">, __ To go!</span>
+        </div>
+        <div class="module-body">
+          <canvas id="hoursChart" width="200" height="200"></canvas>
+        </div>
+      </div>
+
+      <!-- Second Module (empty for now) -->
+      <div class="module second-module">
+        <!-- Additional content for the second module can be added here -->
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/navbar.js"></script>
+  <script src="./js/logout.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

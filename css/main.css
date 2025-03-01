@@ -1,0 +1,49 @@
+/* Adjust main content to have a margin on the left */
+main {
+  margin-left: 70px;  /* Adjusted to 70px as requested */
+  padding: 20px;
+}
+
+/* Container for the modules arranged side by side */
+.modules-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Styling for each module block */
+.module {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 1; /* Ensures modules take equal space */
+  min-width: 300px; /* Prevents modules from becoming too narrow */
+}
+
+/* Hours module header styling */
+.hours-module .module-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hours-module .module-header .hours-text,
+.hours-module .module-header .to-go-text {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.hours-module .module-header .toggle-week {
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Center the module body content */
+.module .module-body {
+  text-align: center;
+}
