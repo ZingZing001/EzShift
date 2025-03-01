@@ -38,16 +38,21 @@ main {
   margin-bottom: 20px;
 }
 
+
+.hours-module .module-header .toggle-week {
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
 .hours-module .module-header .hours-text,
 .hours-module .module-header .to-go-text {
   font-size: 18px;
   margin-right: 10px;
 }
 
-.hours-module .module-header .toggle-week {
-  font-size: 16px;
-  padding: 5px 10px;
-  cursor: pointer;
+.toggle-week {
+  color: #8160b9;
 }
 
 .module-body {
