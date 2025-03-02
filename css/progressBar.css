@@ -61,6 +61,35 @@
   left: 0;
 }
 
+.circle-shadow-container {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+
+.circle-shadow {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  background-color: transparent;
+}
+
+.circle-1-shadow {
+  stroke-width: 25px;
+  stroke: rgb(103, 200, 153);
+  filter: url(#roundEdges2);
+  opacity: 0.7;
+}
+
+.circle-2-shadow {
+  stroke-width: 25px;
+  stroke: grey;
+  filter: url(#roundEdges2);
+  opacity: 0.7;
+}
+
+
+
 @keyframes anim {
   100%{
     stroke-dashoffset: var(--greenDashOffset);
