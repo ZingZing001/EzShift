@@ -68,6 +68,10 @@ main {
   cursor: pointer;
 }
 
+.time-text {
+  line-height: 1;
+}
+
 .hours-module .module-header .hours-text,
 .hours-module .module-header .to-go-text {
   font-size: 18px;
@@ -82,8 +86,18 @@ main {
   display: inline-block;
 }
 
-.toggle-week {
+.time-text-container {
+  display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 27px;
+  width: 80px;
+}
+
+
+
+.toggle-week {
   color: #8160b9;
 }
 
@@ -91,11 +105,23 @@ main {
   width: 10px;
   position: absolute;
   top: -10px;
-  left: 33px;
+  left: 40px;
 }
 
 .module-body {
   display: flex;
   justify-content: center;
+}
+
+@keyframes toWeek {
+  0% {transform: scale(1); opacity: 1;}
+  50% {transform: scale(0.8); opacity: 0;}
+  100% {transform: scale(1); opacity: 1;}
+}
+
+@keyframes toTotal {
+  0% {transform: scale(1); opacity: 1;}
+  50% {transform: scale(0.8); opacity: 0;}
+  100% {transform: scale(1); opacity: 1;}
 }
 
