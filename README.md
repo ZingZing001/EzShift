@@ -1,5 +1,14 @@
 # EzShift
 
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
+![Node.js](https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white) 
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) 
+![EJS](https://img.shields.io/badge/EJS-%23A91E50.svg?style=for-the-badge&logo=ejs&logoColor=white) 
+![Better-SQLite3](https://img.shields.io/badge/sqlite3-%23003B57.svg?style=for-the-badge&logo=sqlite&logoColor=white) 
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) 
+![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white) 
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) 
+
 ## Overview
 EzShift is a shift management web application designed to help users manage their work schedules and payroll efficiently.
 
