@@ -33,7 +33,7 @@ EzShift is a shift management web application designed to help users manage thei
    ```
 4. Start the server:
    ```sh
-   npm start
+   npm run dev
    ```
 
 ## Project Progress
