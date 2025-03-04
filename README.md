@@ -21,7 +21,7 @@ EzShift is a shift management web application designed to help users manage thei
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/EzShift.git
+   git clone https://github.com/ZingZing001/EzShift.git
    ```
 2. Navigate into the project directory:
    ```sh
