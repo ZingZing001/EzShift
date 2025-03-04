@@ -1,20 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.querySelector(".sidebar");
-  
+
   sidebar.addEventListener("mouseenter", function () {
-      sidebar.classList.add("expanded");
+    sidebar.classList.add("expanded");
   });
 
   sidebar.addEventListener("mouseleave", function () {
-      sidebar.classList.remove("expanded");
+    sidebar.classList.remove("expanded");
   });
 
   // Highlight the active button
   const pageMap = {
-      "index.html": "homeButton",
-      "shifts.html": "shiftsButton",
-      "payroll.html": "payrollButton",
-      "settings.html": "settingsButton"
+    "index.html": "homeButton",
+    "shifts.html": "shiftsButton",
+    "payroll.html": "payrollButton",
+    "settings.html": "settingsButton",
+    "employee.html": "employeeButton",
   };
 
   // Get the current page filename
@@ -25,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Find the corresponding button
   const activeButtonId = pageMap[currentPage];
   if (activeButtonId) {
-      const activeButton = document.getElementById(activeButtonId);
-      if (activeButton) {
-          activeButton.classList.add("active");
-          console.log("Active Button Set:", activeButtonId);
-      } else {
-          console.log("Active button not found:", activeButtonId);
-      }
+    const activeButton = document.getElementById(activeButtonId);
+    if (activeButton) {
+      activeButton.classList.add("active");
+      console.log("Active Button Set:", activeButtonId);
+    } else {
+      console.log("Active button not found:", activeButtonId);
+    }
   }
 });
