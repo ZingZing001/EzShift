@@ -67,3 +67,14 @@ body {
 .login-form p a:hover {
     background: #00264d;
 }
+
+.error{
+    color: #ff4d4d;
+    background: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ff4d4d;
+}

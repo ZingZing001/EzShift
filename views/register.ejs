@@ -4,13 +4,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EzShift Register</title>
-        <link rel="stylesheet" href="/loginstyle.css">
+        <link rel="stylesheet" href="/authstyle.css">
     </head>
     <main>
         <form action="/register" method="POST">
             <div class="container">
                 <div class="login-form">
                     <h2>Register</h2>
+                        <% errors.forEach(error => {
+                            %>
+                            <p class="error"><%= error %></p>
+                            <% }) %>
                     <input type="text" id ="username" name="username" placeholder="Username" autocomplete="off">
                     <input type="password" id ="password" name="password" placeholder="Password" autocomplete="off">
                     <button>Next →</button>
