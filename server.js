@@ -53,18 +53,13 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
-app.get("/", (req, res) => {
-  res.render("register");
-});
-
 app.get("/", (req, res) => {
   if (req.user) {
     return res.render("home", { user: req.user });
   }
-  res.render("/login");
+  res.render("register");
 });
+
 
 app.get("/login", (req, res) => {
   res.render("login");
@@ -76,7 +71,7 @@ app.get("/logout", (req, res) => {
     secure: true,
     sameSite: "strict",
   });
-  res.redirect("/login");
+  res.redirect("/");
 });
 
 app.post("/register", (req, res) => {
@@ -93,9 +88,6 @@ app.post("/register", (req, res) => {
     errors.push("Username must be at most 20 characters long");
   if (req.body.username && !req.body.username.match(/^[a-zA-Z0-9]+$/))
     errors.push("Username can only contain letters and numbers");
-
-  if (typeof req.body.username !== "string") req.body.username = "";
-  if (typeof req.body.password !== "string") req.body.password = "";
 
   req.body.password = req.body.password.trim();
   if (!req.body.password) errors.push("Password is required");
@@ -135,6 +127,51 @@ app.post("/register", (req, res) => {
     maxAge: 1000 * 60 * 60 * 24,
   });
   res.render("home", { user });
+});
+
+app.post("/login", (req, res) => {
+  const errors = [];
+
+  if (typeof req.body.username !== "string") req.body.username = "";
+  if (typeof req.body.password !== "string") req.body.password = "";
+
+  req.body.username = req.body.username.trim();
+  if (req.body.username == "" || (req.body.password == "")) errors.push("INVALID USERNAME/PASSWORD");
+
+  if (errors.length) {
+    return res.render("login", { errors });
+  }
+
+  const userInQuestionStatement = db.prepare("SELECT * FROM users WHERE username = ?");
+  const userInQuestion = userInQuestionStatement.get(req.body.username);
+  
+  if (!userInQuestion) {
+    errors.push("INVALID USERNAME/PASSWORD");
+    return res.render("login", { errors });
+  }
+
+  const passwordMatch = bcrypt.compareSync(req.body.password, userInQuestion.password);
+  if (!passwordMatch) {
+    errors.push("INVALID USERNAME/PASSWORD");
+    return res.render("login", { errors });
+  }
+
+  // give the user a cookie
+  const token = jwt.sign({ 
+    exp: Math.floor(Date.now()/1000) + 60 * 60 * 24 ,
+    userid: userInQuestion.id, 
+    username: userInQuestion.username 
+  },process.env.JWT_SECRET);
+
+  res.cookie("session", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "strict",
+    maxAge: 1000 * 60 * 60 * 24,
+  });
+
+  res.redirect("/");
+
 });
 
 app.listen(3000);
