@@ -34,6 +34,15 @@ app.use((req, res, next) => {
   try{
     const decoded = jwt.verify(req.cookies.session, process.env.JWT_SECRET);
     req.user = decoded;
+
+    // Fetch user from database to ensure the username is updated
+    const lookupStatement = db.prepare("SELECT * FROM users WHERE id = ?");
+    const user = lookupStatement.get(decoded.userid);
+
+    if (user) {
+      req.user = user;  // Overwrite req.user with the actual database user
+    }
+
   }catch(err){
     req.user = false;
   }
@@ -44,12 +53,30 @@ app.use((req, res, next) => {
   next();
 });
 
+
+
 app.get("/", (req, res) => {
   res.render("register");
 });
 
+app.get("/", (req, res) => {
+  if (req.user) {
+    return res.render("home", { user: req.user });
+  }
+  res.render("/login");
+});
+
 app.get("/login", (req, res) => {
   res.render("login");
+});
+
+app.get("/logout", (req, res) => {
+  res.clearCookie("session", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "strict",
+  });
+  res.redirect("/login");
 });
 
 app.post("/register", (req, res) => {
@@ -94,14 +121,20 @@ app.post("/register", (req, res) => {
   const user = lookupStatement.get(result.lastInsertRowid);
 
   // log the user in and assign them with a cookie
-  const token = jwt.sign({ exp: Math.floor(Date.now()/1000) + 60 * 60 * 24 ,userid: user.id, username: user.username }, process.env.JWT_SECRET);
+  const token = jwt.sign({ 
+    exp: Math.floor(Date.now()/1000) + 60 * 60 * 24 ,
+    userid: user.id, 
+    username: user.username 
+  }, 
+  process.env.JWT_SECRET);
+
   res.cookie("session", token, {
     httpOnly: true,
     secure: true,
     sameSite: "strict",
     maxAge: 1000 * 60 * 60 * 24,
   });
-  res.render("home");
+  res.render("home", { user });
 });
 
 app.listen(3000);

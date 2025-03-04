@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <script src="https://kit.fontawesome.com/98c4d327f1.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<main>
     <header class="sidebar">
         <div class="user-profile">
             <img src="/assets/icons/user-icon.png" alt="User Profile" class="profile-icon">
-            <p class="user-name">Username</p>
+            <p class="user-name"><%= user.username %></p>
         </div>
         <nav class="nav-buttons">
             <button id="homeButton" onclick="location.href='index.html'">
@@ -39,5 +39,5 @@
     
     <script src="/js/navbar.js"></script>
     <script src="/js/logout.js"></script>
-</body>
+</main>
 </html>
