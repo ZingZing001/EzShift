@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EzShift Register</title>
-    <link rel="stylesheet" href="/loginstyle.css">
-</head>
-<body>
-    <div class="container">
-        <div class="login-form">
-            <h2>Register</h2>
-            <input type="text" placeholder="Email or Username">
-            <input type="password" placeholder="Password">
-            <button>Next →</button>
-            <br/>
-            <br/>
-            <p><a href="/login">Already has an account? Login in here!</a></p>
-        </div>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EzShift Register</title>
+        <link rel="stylesheet" href="/loginstyle.css">
+    </head>
+    <main>
+        <form action="/register" method="POST">
+            <div class="container">
+                <div class="login-form">
+                    <h2>Register</h2>
+                    <input type="text" id ="username" name="username" placeholder="Username" autocomplete="off">
+                    <input type="password" id ="password" name="password" placeholder="Password" autocomplete="off">
+                    <button>Next →</button>
+                    <br/>
+                    <br/>
+                    <p><a href="/login">Already has an account?</a></p>
+                </div>
+            </div>
+        </form>
+    </main>
 </html>
