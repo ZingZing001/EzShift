@@ -1,4 +1,4 @@
-.employee {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,4 +35,32 @@
 .modify-edit {
   background-color: #edae49;
   color: black;
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 30px;
+  margin: 20px 45px 0 120px;
+}
+
+.search-bar {
+  padding: 2px 10px 3px 15px;
+  border: none;
+  font-size: 16px;
+  width: 200px;
+  background-color: rgb(237, 231, 231);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: rgb(237, 231, 231);
+  padding: 8px 20px;
+  border-radius: 18px;
+  width: 250px;
+  margin-left: auto;
 }
