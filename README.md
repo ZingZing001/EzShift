@@ -29,7 +29,7 @@ EzShift is a shift management web application designed to help users manage thei
    ```
 3. Install dependencies:
    ```sh
-   npm setup
+   npm run setup
    npm install
    ```
 4. Start the server:
