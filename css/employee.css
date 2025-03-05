@@ -1,0 +1,38 @@
+.employee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 30px;
+  margin: 20px 45px 0 120px;
+}
+
+.left {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  gap: 10px;
+}
+
+.right button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add-employee {
+  background-color: #a8e6a3;
+  color: black;
+}
+
+.modify-edit {
+  background-color: #edae49;
+  color: black;
+}
