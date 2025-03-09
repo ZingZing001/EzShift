@@ -5,29 +5,66 @@ document.addEventListener("DOMContentLoaded", function () {
 let totalHour = 60;
 let workedHour = 30;
 
-const timeText = document.querySelector('.time-text');
+const timeText = document.querySelectorAll('.time-text');
+const timeTextList = document.querySelector('.time-text-list');
 let isWeek = true
+let isAnimating = false;
+let lastTimeOut;
 
-timeText.addEventListener('click', () => {
-  if (isWeek) {
-    timeText.style.animation = 'toTotal 1s linear';
-    setTimeout(() => {
-      timeText.innerText = 'in total';
-    }, 500);
-    totalHour = 100;
-    workedHour = 60;
-    loadProgressBar();
-    isWeek = false;
-  } else {
-    timeText.style.animation = 'toWeek 1s linear';
-    setTimeout(() => {
-      timeText.innerText = 'this week';
-    }, 500);
-    totalHour = 60;
-    workedHour = 30;
-    loadProgressBar();
-    isWeek = true;
-  }
+timeText.forEach((text) => {
+  text.addEventListener('mouseenter', () => {
+    if (isAnimating) {
+      return;
+    }
+    isAnimating = true;
+    if (isWeek) {
+      clearTimeout(lastTimeOut);
+      timeTextList.style.animation = 'slide-up 0.2s linear';
+      lastTimeOut = setTimeout(() => {
+        timeTextList.style.transform = 'translateY(-100%)';
+      }, 200);
+      // totalHour = 100;
+      // workedHour = 60;
+      // loadProgressBar();
+      // isWeek = false;
+    } else {
+      clearTimeout(lastTimeOut);
+      timeTextList.style.animation = 'slide-down 0.2s linear';
+      lastTimeOut = setTimeout(() => {
+        timeTextList.style.transform = 'translateY(0%)';
+      }, 200);
+      // totalHour = 60;
+      // workedHour = 30;
+      // loadProgressBar();
+      // isWeek = true;
+    }
+  });
+
+  text.addEventListener('mouseleave', () => {
+    isAnimating = false;
+
+    if (isWeek) {
+      clearTimeout(lastTimeOut);
+      timeTextList.style.animation = 'slide-down 0.2s linear';
+      lastTimeOut = setTimeout(() => {
+        timeTextList.style.transform = 'translateY(0%)';
+      }, 200);
+      // totalHour = 100;
+      // workedHour = 60;
+      // loadProgressBar();
+      // isWeek = false;
+    } else {
+      clearTimeout(lastTimeOut);
+      timeTextList.style.animation = 'slide-up 0.2s linear';
+      lastTimeOut = setTimeout(() => {
+        timeTextList.style.transform = 'translateY(-100%)';
+      }, 200);
+      // totalHour = 60;
+      // workedHour = 30;
+      // loadProgressBar();
+      // isWeek = true;
+    }
+  })
 }
 );
 
