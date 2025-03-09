@@ -84,12 +84,30 @@ main {
   -webkit-background-clip: text;
 }
 
+.hour-text-container ol li span {
+  font-weight: 600;
+  -webkit-text-fill-color: transparent;
+  background: rgb(255, 152, 252);
+  -webkit-background-clip: text;
+}
+
+.hour-text-container-2 ol li span {
+  font-weight: 600;
+  -webkit-text-fill-color: transparent;
+  background: rgb(195, 0, 255);
+  -webkit-background-clip: text;
+}
+
 .toggle-week {
   cursor: pointer;
 }
 
 .time-text {
   line-height: 1;
+}
+
+.hour-text {
+  text-decoration: underline;
 }
 
 .hours-module .module-header .hours-text,
@@ -101,6 +119,16 @@ main {
 .hours-text {
   width: 100%;
 }
+
+.hour-text-list {
+  display: inline-block;
+  width: 50px;
+}
+
+.hour-text-list ol li {
+  list-style: none;
+}
+
 
 .toggle-week-container {
   display: inline-block;
@@ -115,6 +143,10 @@ main {
   height: 15px;
   width: 85px;
   overflow: hidden;
+}
+
+.hour-text-container {
+  width: 30px;;
 }
 
 .toggle-week {

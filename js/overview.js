@@ -2,78 +2,78 @@ document.addEventListener("DOMContentLoaded", function () {
   loadProgressBar();
 });
 
+let weekHour = 60;
+let weekWorkedHour = 30;
+
 let totalHour = 60;
-let workedHour = 30;
+let totalWorkedHour = 30;
 
 const timeText = document.querySelectorAll('.time-text');
-const timeTextList = document.querySelector('.time-text-list');
+const timeTextList = document.querySelectorAll('.time-text-list');
 let isWeek = true
 let isAnimating = false;
 let lastTimeOut;
 
 // timeText.forEach((text) => {
-  timeTextList.addEventListener('mouseenter', () => {
-    if (isAnimating) {
-      return;
-    }
-    isAnimating = true;
-    if (isWeek) {
-      clearTimeout(lastTimeOut);
-      timeTextList.style.animation = 'slide-up 0.2s linear';
-      lastTimeOut = setTimeout(() => {
-        timeTextList.style.transform = 'translateY(-100%)';
-      }, 200);
-      // totalHour = 100;
-      // workedHour = 60;
-      // loadProgressBar();
-      // isWeek = false;
-    } else {
-      clearTimeout(lastTimeOut);
-      timeTextList.style.animation = 'slide-down 0.2s linear';
-      lastTimeOut = setTimeout(() => {
-        timeTextList.style.transform = 'translateY(0%)';
-      }, 200);
-      // totalHour = 60;
-      // workedHour = 30;
-      // loadProgressBar();
-      // isWeek = true;
-    }
+  timeTextList.forEach((list) => {
+    list.addEventListener('mouseenter', () => {
+      if (isAnimating) {
+        return;
+      }
+      isAnimating = true;
+      if (isWeek) {
+        clearTimeout(lastTimeOut);
+        list.style.animation = 'slide-up 0.2s linear';
+        lastTimeOut = setTimeout(() => {
+          list.style.transform = 'translateY(-100%)';
+        }, 200);
+      } else {
+        clearTimeout(lastTimeOut);
+        list.style.animation = 'slide-down 0.2s linear';
+        lastTimeOut = setTimeout(() => {
+          list.style.transform = 'translateY(0%)';
+        }, 200);
+      }
+    });
+
+    list.addEventListener('mouseleave', () => {
+      isAnimating = false;
+
+      if (isWeek) {
+        clearTimeout(lastTimeOut);
+        list.style.animation = 'slide-down 0.2s linear';
+        lastTimeOut = setTimeout(() => {
+          list.style.transform = 'translateY(0%)';
+        }, 200);
+      } else {
+        clearTimeout(lastTimeOut);
+        list.style.animation = 'slide-up 0.2s linear';
+        lastTimeOut = setTimeout(() => {
+          list.style.transform = 'translateY(-100%)';
+        }, 200);
+      }
+    });
   });
 
-  timeTextList.addEventListener('mouseleave', () => {
-    // if (isAnimating) {
-    //   return;
-    // }
-    isAnimating = false;
-
-    if (isWeek) {
-      clearTimeout(lastTimeOut);
-      timeTextList.style.animation = 'slide-down 0.2s linear';
-      lastTimeOut = setTimeout(() => {
-        timeTextList.style.transform = 'translateY(0%)';
-      }, 200);
-      // totalHour = 100;
-      // workedHour = 60;
-      // loadProgressBar();
-      // isWeek = false;
-    } else {
-      clearTimeout(lastTimeOut);
-      timeTextList.style.animation = 'slide-up 0.2s linear';
-      lastTimeOut = setTimeout(() => {
-        timeTextList.style.transform = 'translateY(-100%)';
-      }, 200);
-      // totalHour = 60;
-      // workedHour = 30;
-      // loadProgressBar();
-      // isWeek = true;
+  timeText.forEach((text) => {
+    text.addEventListener('click', () => {
+      if (isWeek) {
+        timeTextList.forEach((list) => {
+          list.style.transform = 'translateY(-100%)';
+        });
+        loadProgressBar();
+        isWeek = false;
+      } else {
+        timeTextList.forEach((list) => {
+          list.style.transform = 'translateY(0%)';
+        });
+        loadProgressBar();
+        isWeek = true;
+      }
     }
-  });
-
-  // timeTextList.addEventListener('animationend', () => {
-  //   isAnimating = false;
-  // });
-// }
-// );
+    );
+  }
+  );
 
 function loadProgressBar() {
   let numberEle = document.getElementById('number');
@@ -84,7 +84,7 @@ function loadProgressBar() {
   const circle2 = document.querySelector(".circle-2");
   
 
-  const percentage = Math.ceil(workedHour / totalHour * 100);
+  const percentage = Math.ceil(weekWorkedHour/ weekHour * 100);
   let greenDashOffset = (450 - 450 * (percentage / 100) + 15 * (percentage / 100));
   let greyDashOffset = 450 * percentage / 100 + 15 * (1 - percentage / 100);
   let greyRotate = -90 + 360 * percentage / 100 + (2 - 4 * percentage / 100);
