@@ -11,8 +11,8 @@ let isWeek = true
 let isAnimating = false;
 let lastTimeOut;
 
-timeText.forEach((text) => {
-  text.addEventListener('mouseenter', () => {
+// timeText.forEach((text) => {
+  timeTextList.addEventListener('mouseenter', () => {
     if (isAnimating) {
       return;
     }
@@ -40,7 +40,10 @@ timeText.forEach((text) => {
     }
   });
 
-  text.addEventListener('mouseleave', () => {
+  timeTextList.addEventListener('mouseleave', () => {
+    // if (isAnimating) {
+    //   return;
+    // }
     isAnimating = false;
 
     if (isWeek) {
@@ -64,9 +67,13 @@ timeText.forEach((text) => {
       // loadProgressBar();
       // isWeek = true;
     }
-  })
-}
-);
+  });
+
+  // timeTextList.addEventListener('animationend', () => {
+  //   isAnimating = false;
+  // });
+// }
+// );
 
 function loadProgressBar() {
   let numberEle = document.getElementById('number');
