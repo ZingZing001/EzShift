@@ -10,11 +10,11 @@ let totalWorkedHour = 30;
 
 const timeText = document.querySelectorAll('.time-text');
 const timeTextList = document.querySelectorAll('.time-text-list');
+const hourTextList = document.querySelectorAll('.hour-text-list');
 let isWeek = true
 let isAnimating = false;
 let lastTimeOut;
 
-// timeText.forEach((text) => {
   timeTextList.forEach((list) => {
     list.addEventListener('mouseenter', () => {
       if (isAnimating) {
@@ -61,12 +61,14 @@ let lastTimeOut;
         timeTextList.forEach((list) => {
           list.style.transform = 'translateY(-100%)';
         });
+        animateHourText();
         loadProgressBar();
         isWeek = false;
       } else {
         timeTextList.forEach((list) => {
           list.style.transform = 'translateY(0%)';
         });
+        animateHourText();
         loadProgressBar();
         isWeek = true;
       }
@@ -74,6 +76,23 @@ let lastTimeOut;
     );
   }
   );
+
+function animateHourText() {
+  hourTextList.forEach((list) => {
+
+    if (isWeek) {
+      list.style.animation = 'slide-up 0.2s linear';
+      setTimeout(() => {
+        list.style.transform = 'translateY(-100%)';
+      }, 200);
+    } else {
+      list.style.animation = 'slide-down 0.2s linear';
+      setTimeout(() => {
+        list.style.transform = 'translateY(0%)';
+      }, 200);
+    }
+  });
+}
 
 function loadProgressBar() {
   let numberEle = document.getElementById('number');
